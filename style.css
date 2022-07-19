@@ -1,10 +1,126 @@
+:root {
+  --blue: #0a0c19;
+  --dark-violet: #1b1938;
+  --violet: #aa5cdb;
+  --white: #ffffff;
+  --off-white: #bebebe;
+  --primary-font: 'Inter', sans-serif;
+  --secondary-font: 'Lexend Deca', sans-serif;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.container {
+  background-color: var(--blue);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .card {
-  width: 70%;
+  width: 73%;
+  height: 52vh;
+  background: var(--dark-violet);
+  display: flex;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.card__text {
+  width: 50%;
   height: 100%;
-  background: aqua;
+  color: var(--white);
+  font-family: var(--primary-font);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.13rem;
+}
+.card__title h1 {
+  margin-bottom: 1.5rem;
+}
+.card__title h1 span {
+  color: var(--violet);
+}
+.card__stat {
+  display: flex;
+  gap: 1.9rem;
+}
+.card__image {
+  width: 50%;
+  height: 100%;
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+@media screen and (max-width: 1200px) {
+  .card__text {
+    width: 66%;
+  }
+  .card__image {
+    width: 34%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .card {
+    width: 56%;
+    height: 67vh;
+    flex-direction: column-reverse;
+  }
+  .card__image {
+    width: 100%;
+    height: 50%;
+  }
+  .card__image img {
+    width: 100%;
+    height: 100%;
+  }
+  .card__text {
+    width: 100%;
+    height: 50%;
+    padding: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .card {
+    width: 74%;
+    height: 85vh;
+  }
+  .card__image {
+    width: 100%;
+    height: 28.8%;
+  }
+  .card__image img {
+    object-fit: cover;
+    /* object-position: top; */
+  }
+  .card__text {
+    height: 71.2%;
+    padding: 1.7rem;
+  }
+  .card__title h1 {
+    font-size: 1.5rem;
+  }
+
+  .card__stat {
+    gap: 1rem;
+  }
+  .card__stat h2 {
+    font-size: 1.125rem;
+  }
+  .card__stat p {
+    font-size: 0.875rem;
+  }
 }
